@@ -1,0 +1,25 @@
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.each do |user| %>
+      <tr>
+        <td>
+          <%= image_tag user.get_profile_image(100,100) %>
+          <div>
+            <%= link_to user_path(user) do %>
+              <%= user.name %>
+            <% end %>
+          </div>
+        </td>
+        <td class="follow-count-btn">
+          <%= render "follow-count", user: user %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

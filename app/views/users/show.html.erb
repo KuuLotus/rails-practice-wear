@@ -1,0 +1,18 @@
+<div class="container mt-3">
+  <div class="row">
+    <!--ユーザーの名前、プロフィール写真-->
+    <div class="col-2">
+      <h3><strong><%= @user.name %></strong></h3>
+    </div>
+    <div class="col-6">
+      <%= image_tag @user.get_profile_image(200,200) %>
+    </div>
+    <!--フォロー数とフォローボタン非同期通信-->
+    <div class="follow-count-btn col-4">
+      <%= render "follow-count", user: @user %>
+    </div>
+  </div>
+</div>
+
+<!--ユーザーの投稿一覧-->
+<%= render "post_images/index", post_images: @post_images %>
